@@ -61,6 +61,9 @@ public class Main {
 
         }
 
+        Order order = new Order(cupcakeMenu, drinkMenu);
+
+
     }
 }
 
