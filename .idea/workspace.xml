@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a9437b48-1f8c-42df-8f7f-8cc71164d618" name="Changes" comment="Create order class - which shows the menu and take the order">
+    <list default="true" id="a9437b48-1f8c-42df-8f7f-8cc71164d618" name="Changes" comment="Create while loop to manage the ordering variable and add the items to the order array">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Order.java" afterDir="false" />
     </list>
@@ -65,7 +65,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667935218944</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Create while loop to manage the ordering variable and add the items to the order array">
+      <created>1667935976211</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1667935976211</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -83,6 +90,7 @@
     <MESSAGE value="Create cupcake, redvelvet and chocolate classes and set up prices" />
     <MESSAGE value="Create drink, soda and milk classes and set up prices" />
     <MESSAGE value="Create order class - which shows the menu and take the order" />
-    <option name="LAST_COMMIT_MESSAGE" value="Create order class - which shows the menu and take the order" />
+    <MESSAGE value="Create while loop to manage the ordering variable and add the items to the order array" />
+    <option name="LAST_COMMIT_MESSAGE" value="Create while loop to manage the ordering variable and add the items to the order array" />
   </component>
 </project>
