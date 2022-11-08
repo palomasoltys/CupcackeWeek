@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a9437b48-1f8c-42df-8f7f-8cc71164d618" name="Changes" comment="Create while loop to manage the ordering variable and add the items to the order array">
+    <list default="true" id="a9437b48-1f8c-42df-8f7f-8cc71164d618" name="Changes" comment="Generate receipt by looping through the array of ordered items and printing the item and the price">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Order.java" afterDir="false" />
     </list>
@@ -72,7 +72,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667935976211</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Generate receipt by looping through the array of ordered items and printing the item and the price">
+      <created>1667937879594</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1667937879594</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -91,6 +98,7 @@
     <MESSAGE value="Create drink, soda and milk classes and set up prices" />
     <MESSAGE value="Create order class - which shows the menu and take the order" />
     <MESSAGE value="Create while loop to manage the ordering variable and add the items to the order array" />
-    <option name="LAST_COMMIT_MESSAGE" value="Create while loop to manage the ordering variable and add the items to the order array" />
+    <MESSAGE value="Generate receipt by looping through the array of ordered items and printing the item and the price" />
+    <option name="LAST_COMMIT_MESSAGE" value="Generate receipt by looping through the array of ordered items and printing the item and the price" />
   </component>
 </project>

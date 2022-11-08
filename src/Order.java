@@ -1,3 +1,7 @@
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.ArrayList;
@@ -19,14 +23,14 @@ public class Order {
             System.out.println("CUPCAKES: ");
             int itemNumber = 1;
             for(Cupcake cupcake : cupcakeMenu) {
-                System.out.println(itemNumber+". "+cupcake.getName()+ " - "+cupcake.getPrice()+".");
+                System.out.println(itemNumber+". "+cupcake.getName()+ " - $"+cupcake.getPrice()+".");
                 itemNumber++;
             }
             System.out.println();
 
             System.out.println("DRINKS: ");
             for(Drink drink : drinkMenu) {
-                System.out.println(itemNumber+". "+drink.getName()+ " - "+drink.getPrice()+".");
+                System.out.println(itemNumber+". "+drink.getName()+ " - $"+drink.getPrice()+".");
                 itemNumber++;
             }
             boolean ordering = true;
@@ -35,12 +39,12 @@ public class Order {
                 int orderChoice = scan.nextInt();
                 scan.nextLine();
                 switch (orderChoice) {
-                    case 1 -> order.add(cupcakeMenu.get(1));
-                    case 2 -> order.add(cupcakeMenu.get(2));
-                    case 3 -> order.add(cupcakeMenu.get(3));
-                    case 4 -> order.add(drinkMenu.get(1));
-                    case 5 -> order.add(drinkMenu.get(2));
-                    case 6 -> order.add(drinkMenu.get(3));
+                    case 1 -> order.add(cupcakeMenu.get(0));
+                    case 2 -> order.add(cupcakeMenu.get(1));
+                    case 3 -> order.add(cupcakeMenu.get(2));
+                    case 4 -> order.add(drinkMenu.get(0));
+                    case 5 -> order.add(drinkMenu.get(1));
+                    case 6 -> order.add(drinkMenu.get(2));
                     default -> System.out.println("Sorry, we don't have this item on the menu.");
                 }
                 System.out.println("Item added to order");
@@ -57,35 +61,70 @@ public class Order {
             for(int i=2; i < order.size(); i++) {
                 if (order.get(i).equals(cupcakeMenu.get(0))) {
                     cupcakeMenu.get(0).type();
-                    System.out.println(cupcakeMenu.get(0).getPrice());
+                    System.out.println("$"+cupcakeMenu.get(0).getPrice());
                     subtotal += cupcakeMenu.get(0).getPrice();
                 } else if (order.get(i).equals(cupcakeMenu.get(1))) {
                     cupcakeMenu.get(1).type();
-                    System.out.println(cupcakeMenu.get(1).getPrice());
+                    System.out.println("$"+cupcakeMenu.get(1).getPrice());
                     subtotal += cupcakeMenu.get(1).getPrice();
                 } else if (order.get(i).equals(cupcakeMenu.get(2))) {
                     cupcakeMenu.get(2).type();
-                    System.out.println(cupcakeMenu.get(2).getPrice());
+                    System.out.println("$"+cupcakeMenu.get(2).getPrice());
                     subtotal += cupcakeMenu.get(2).getPrice();
                 } else if (order.get(i).equals(drinkMenu.get(0))) {
                     drinkMenu.get(0).type();
-                    System.out.println(drinkMenu.get(0).getPrice());
+                    System.out.println("$"+drinkMenu.get(0).getPrice());
                     subtotal += drinkMenu.get(0).getPrice();
                 } else if (order.get(i).equals(drinkMenu.get(1))) {
                     drinkMenu.get(1).type();
-                    System.out.println(drinkMenu.get(1).getPrice());
+                    System.out.println("$"+drinkMenu.get(1).getPrice());
                     subtotal += drinkMenu.get(1).getPrice();
                 } else if (order.get(i).equals(drinkMenu.get(2))) {
                     drinkMenu.get(2).type();
-                    System.out.println(drinkMenu.get(2).getPrice());
+                    System.out.println("$"+drinkMenu.get(2).getPrice());
                     subtotal += drinkMenu.get(2).getPrice();
                 }
             }
             System.out.println("The subtotal is: $"+subtotal);
+            new CreateFile();
+            new WriteToFile(order);
 
 
         } else {
             System.out.println("Have a nice day then.");
+        }
+    }
+}
+
+class CreateFile {
+    public CreateFile() {
+        try {
+            File salesData = new File("salesData.txt");
+            if(salesData.createNewFile()) {
+                System.out.println("File created: "+salesData.getName() );
+            } else {
+                System.out.println("File already exists.");
+            }
+
+        } catch(IOException e) {
+            System.out.println("An error occurred.");
+        }
+    }
+
+}
+
+class WriteToFile {
+    public WriteToFile(ArrayList<Object> order) {
+        try {
+            FileWriter fw = new FileWriter("salesData.txt", true);
+            PrintWriter salesWriter = new PrintWriter(fw);
+            for(int i=0; i < order.size();i++) {
+                salesWriter.println(order.get(i));
+            }
+            salesWriter.close();
+            System.out.println("Successfully wrote to the file ");
+        } catch(IOException e) {
+            System.out.println("An error occurred.");
         }
     }
 }
